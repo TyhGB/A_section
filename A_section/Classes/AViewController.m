@@ -7,7 +7,7 @@
 //
 
 #import "AViewController.h"
-#import "BViewController.h"
+#import <B_Category/CTMediator+B.h>
 @interface AViewController ()
 
 @end
@@ -26,7 +26,7 @@
 }
 - (void)pushVC
 {
-    BViewController *vc = [[BViewController alloc] init];
+    UIViewController *vc = [[CTMediator sharedInstance] B_viewControllerWithContentText:@"hello world"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 /*
